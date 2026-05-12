@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Crystal360 |  Dwarka Expressway, Gurugram</title>
+  <title>RealEstate360 | Dwarka Expressway, Gurugram</title>
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -107,6 +107,16 @@
       font-size: 1.7rem;
       font-weight: 800;
       letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #1E2A3E 0%, #2E7D32 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    /* Logo style: RealEstate with sup 360 */
+    .logo h1 .small-360 {
+      font-size: 0.85rem;
+      vertical-align: super;
+      font-weight: 700;
       background: linear-gradient(135deg, #1E2A3E 0%, #2E7D32 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -242,7 +252,7 @@
     .wa-row {
       display: flex;
       gap: 12px;
-      margin-top: 12px;
+      margin-top: 16px;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -258,6 +268,11 @@
       color: white;
       text-decoration: none;
       font-size: 0.9rem;
+      transition: 0.2s;
+    }
+    .whatsapp-btn:hover {
+      background: #1da15c;
+      transform: translateY(-2px);
     }
 
     /* other sections (cards etc) */
@@ -394,7 +409,7 @@
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-      <h1>Crystal360</h1>
+      <h1>RealEstate<span class="small-360">360</span></h1>
       <span>Buy Property At Ease</span>
     </div>
     <div class="nav-links">
@@ -416,7 +431,7 @@
     <div class="container hero-flex">
       <div class="hero-content">
         <div class="hero-badge">✨ The Ultimate Retail & Business Landmark</div>
-        <h1>Crystal360 <span class="hero-highlight"></span><br>Dwarka Expressway, Gurugram</h1>
+        <h1>RealEstate<span style="font-size:0.9rem; vertical-align:super;">360</span> <span class="hero-highlight"></span><br>Dwarka Expressway, Gurugram</h1>
         <p class="hero-desc">Exclusive Pre-leased and Ready-to-Move Vacant Spaces. Most Successful High Street Destination at Prime Location with Exceptional Connectivity.</p>
         <div class="hero-stats">
           <div class="stat-item"><h3>₹75 Lakhs*</h3><p>Lockable Shops Starts</p></div>
@@ -429,14 +444,14 @@
         <p style="margin-top: 20px; font-size:0.95rem;"> <strong></strong></p>
       </div>
 
-      <!-- LEAD FORM - TOP (web3forms + WhatsApp) - EMAIL FIELD REMOVED -->
+      <!-- LEAD FORM - TOP (web3forms + WhatsApp) - EMAIL FIELD REMOVED, plus WhatsApp button integrated after send enquiry -->
       <div id="contact-form-top" class="quick-form-card">
         <h3>Book Your Site Visit</h3>
         <p>Get brochure, pricing & availability. <strong>Instant reply</strong></p>
         <form id="web3form" action="https://api.web3forms.com/submit" method="POST">
           <!-- Web3Forms Access Key - Replace with your own key from web3forms.com for production -->
           <input type="hidden" name="access_key" value="31142292-ef01-48e5-8fae-0ade52207307">
-          <input type="hidden" name="subject" value="New Crystal360 Lead from Landing Page">
+          <input type="hidden" name="subject" value="New RealEstate360 Lead from Landing Page">
           <input type="hidden" name="redirect" value="false">
           <div class="input-group">
             <input type="text" name="name" placeholder="Full Name" required>
@@ -449,8 +464,15 @@
             <textarea name="message" rows="2" placeholder="Preferred date / Time"></textarea>
           </div>
           <button type="submit" class="btn" style="width:100%; background:#2E7D32;">Send Inquiry →</button>
-          <div class="wa-row">
           
+          <!-- WhatsApp button integrated just after the Send Enquiry button -->
+          <div class="wa-row">
+            <a href="https://wa.me/91999999999?text=Hello%2C%20I%20am%20interested%20in%20RealEstate360%20at%20Dwarka%20Expressway.%20Please%20share%20details%20and%20brochure." 
+               target="_blank" 
+               class="whatsapp-btn" 
+               style="width:100%; justify-content: center; margin-top: 8px;">
+              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
           </div>
         </form>
         <div id="form-status" style="margin-top: 12px; font-size:0.85rem; text-align:center;"></div>
@@ -487,11 +509,11 @@
   <section id="location" style="background:#F1F8E9;">
     <div class="container">
       <div class="section-title">Location Advantage!</div>
-      <div class="section-subhead">Discover the strategic location benefits and connectivity that make Crystal360 a prime commercial destination in Gurugram.</div>
+      <div class="section-subhead">Discover the strategic location benefits and connectivity that make RealEstate360 a prime commercial destination in Gurugram.</div>
       <div class="location-grid">
         <div class="location-stats">
           <h3>Prime Location in a Thriving Catchment</h3>
-          <p>Located in one of Gurugram’s fastest-evolving growth corridors, Crystal360 is surrounded by a strong and affluent residential ecosystem.</p>
+          <p>Located in one of Gurugram’s fastest-evolving growth corridors, RealEstate360 is surrounded by a strong and affluent residential ecosystem.</p>
           <ul style="list-style: none; margin-top: 20px;">
             <li><i class="fas fa-check-circle" style="color:#2E7D32;"></i> 1,00,000+ High Net-Worth Families</li>
             <li><i class="fas fa-check-circle" style="color:#2E7D32;"></i> 50+ Residential Developments</li>
@@ -518,7 +540,7 @@
     <div class="container">
       <div class="section-title">GALLERY</div>
       <div class="gallery-grid">
-        <div class="gallery-card" style="background-image: url('https://placehold.co/500x300/C8E6C9/FFFFFF?text=Crystal360+Plaza');">Retail Plaza</div>
+        <div class="gallery-card" style="background-image: url('https://placehold.co/500x300/C8E6C9/FFFFFF?text=RealEstate360+Plaza');">Retail Plaza</div>
         <div class="gallery-card" style="background-image: url('https://placehold.co/500x300/A5D6A7/FFFFFF?text=High+Street');">High Street Facade</div>
         <div class="gallery-card" style="background-image: url('https://placehold.co/500x300/81C784/FFFFFF?text=Amphitheatre');">Amphitheatre</div>
         <div class="gallery-card" style="background-image: url('https://placehold.co/500x300/66BB6A/FFFFFF?text=Sky+Deck');">Sky Deck & Pool</div>
@@ -527,7 +549,7 @@
   </section>
 
   <!-- Project Highlights -->
-  <section style="background:#E8F5E9;">
+  <section id="highlights" style="background:#E8F5E9;">
     <div class="container">
       <div class="section-title">Exclusive Pre-Leased & Ready-to-Move Vacant Spaces Available</div>
       <div class="highlights-list">
@@ -546,7 +568,7 @@
   <section>
     <div class="container">
       <div class="section-title">A Complete Ecosystem</div>
-      <div class="section-subhead">Crystal360 brings together retail, workspaces and entertainment within one integrated commercial destination on Dwarka Expressway.</div>
+      <div class="section-subhead">RealEstate360 brings together retail, workspaces and entertainment within one integrated commercial destination on Dwarka Expressway.</div>
       <div class="eco-flex">
         <div class="eco-box">
           <i class="fas fa-shopping-bag" style="font-size:2rem; color:#2E7D32;"></i>
@@ -576,10 +598,10 @@
     </div>
   </section>
 
-  <!-- Why Choose Crystal360 -->
+  <!-- Why Choose RealEstate360 -->
   <section style="background: #F1F8E9;">
     <div class="container">
-      <div class="section-title">Why Choose Crystal360?</div>
+      <div class="section-title">Why Choose RealEstate360?</div>
       <div class="highlight-grid">
         <div class="card"><i class="fas fa-road"></i><h3>Prime frontage</h3><p>India's widest expressway – Dwarka Expressway frontage.</p></div>
         <div class="card"><i class="fas fa-home"></i><h3>High-income communities</h3><p>Located amidst premium residential catchment.</p></div>
@@ -591,7 +613,7 @@
   <!-- Tagline -->
   <section style="padding: 30px 0 20px;">
     <div class="container" style="text-align: center;">
-      <h2 style="font-size: 1.9rem; color:#1B5E20;">CRYSTAL360 – The Medley of Good Times</h2>
+      <h2 style="font-size: 1.9rem; color:#1B5E20;">RealEstate<span style="font-size:0.85rem; vertical-align:super;">360</span> – The Medley of Good Times</h2>
       <p style="font-size: 1.2rem; margin: 16px 0;">Shop. Work. Dine. Entertain. Experience It All.</p>
       <p>📍 Sector 99, Dwarka Expressway, Gurugram</p>
       <p style="margin-top: 12px;">Connect with us today for leasing and investment opportunities.</p>
@@ -602,11 +624,11 @@
 <footer>
   <div class="container">
     <div class="logo" style="margin-bottom: 18px;">
-      <h2 style="color:white;">Crystal360</h2>
+      <h2 style="color:white;">RealEstate<span style="font-size:0.85rem; vertical-align:super;">360</span></h2>
       <span style="color:#81C784;">Sector 99, Dwarka Expressway, Gurugram</span>
     </div>
-    <p>📞 Sales Enquiry: <strong>9310161058</strong> | 📧 hello@crystal360webs.in</p>
-    <p style="margin-top: 12px;">© 2025 Crystal360 | Premium Commercial Destination | *T&C Apply</p>
+    <p>📞 Sales Enquiry: <strong>9310161058</strong> | 📧 hello@realestate360.in</p>
+    <p style="margin-top: 12px;">© 2025 RealEstate360 | Premium Commercial Destination | *T&C Apply</p>
   </div>
 </footer>
 
@@ -660,14 +682,14 @@
         });
         const result = await response.json();
         if(result.success) {
-          statusDiv.innerHTML = '✅ Thank you! Our expert will call you shortly.';
+          statusDiv.innerHTML = '✅ Thank you! Our expert will call you shortly. You can also WhatsApp us for instant details →';
           form.reset();
-          setTimeout(() => { statusDiv.innerHTML = ''; }, 5000);
+          setTimeout(() => { statusDiv.innerHTML = ''; }, 6000);
         } else {
-          statusDiv.innerHTML = '⚠️ Error: ' + (result.message || 'Please try again.');
+          statusDiv.innerHTML = '⚠️ Error: ' + (result.message || 'Please try again or reach via WhatsApp.');
         }
       } catch (error) {
-        statusDiv.innerHTML = '❌ Network error. Please WhatsApp or call us.';
+        statusDiv.innerHTML = '❌ Network error. Please WhatsApp us using the green button above.';
       }
     });
   }
@@ -685,6 +707,6 @@
     });
   });
 </script>
-<!-- Note: Replace access_key with your actual Web3Forms access key for production. Phone updated to 9310161058. All light brown backgrounds changed to light green (#E8F5E9, #F1F8E9, #DCEDC8, etc.) -->
+<!-- Note: updated logo to RealEstate360 (with small '360'), integrated WhatsApp number 999999999 (displayed as +91 9999999999) after Send Enquiry button. All other content unchanged, background colors remain light green, phone in footer 9310161058 remains as per original. -->
 </body>
 </html>
