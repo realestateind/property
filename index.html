@@ -111,16 +111,18 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      display: inline-flex;
+      align-items: baseline;
     }
-    /* Logo style: RealEstate with sup 360 */
-    .logo h1 .small-360 {
+    .logo h1 .sup-360 {
       font-size: 0.85rem;
       vertical-align: super;
       font-weight: 700;
-      background: linear-gradient(135deg, #1E2A3E 0%, #2E7D32 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #1E2A3E 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      margin-left: 2px;
     }
     .logo span {
       font-size: 0.7rem;
@@ -252,7 +254,7 @@
     .wa-row {
       display: flex;
       gap: 12px;
-      margin-top: 16px;
+      margin-top: 12px;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -271,8 +273,8 @@
       transition: 0.2s;
     }
     .whatsapp-btn:hover {
-      background: #1da15c;
-      transform: translateY(-2px);
+      background: #128C7E;
+      transform: translateY(-1px);
     }
 
     /* other sections (cards etc) */
@@ -376,6 +378,30 @@
       padding: 40px 0 28px;
       text-align: center;
     }
+    /* WhatsApp after form styling */
+    .whatsapp-after-card {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .whatsapp-after-card .whatsapp-connect-btn {
+      background: #25D366;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+    }
+    .whatsapp-after-card .whatsapp-connect-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
     @media (max-width: 950px) {
       .hero-flex {
         flex-direction: column;
@@ -409,7 +435,7 @@
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-      <h1>RealEstate<span class="small-360">360</span></h1>
+      <h1>RealEstate<sup class="sup-360">360</sup></h1>
       <span>Buy Property At Ease</span>
     </div>
     <div class="nav-links">
@@ -426,12 +452,12 @@
 </nav>
 
 <main>
-  <!-- Hero Section + Integrated Lead Form (Web3Forms + WhatsApp) at top -->
+  <!-- Hero Section + Integrated Lead Form (Web3Forms) + WhatsApp button placed AFTER the form (outside form) -->
   <section id="home" class="hero">
     <div class="container hero-flex">
       <div class="hero-content">
         <div class="hero-badge">✨ The Ultimate Retail & Business Landmark</div>
-        <h1>RealEstate<span style="font-size:0.9rem; vertical-align:super;">360</span> <span class="hero-highlight"></span><br>Dwarka Expressway, Gurugram</h1>
+        <h1>RealEstate360 <span class="hero-highlight"></span><br>Dwarka Expressway, Gurugram</h1>
         <p class="hero-desc">Exclusive Pre-leased and Ready-to-Move Vacant Spaces. Most Successful High Street Destination at Prime Location with Exceptional Connectivity.</p>
         <div class="hero-stats">
           <div class="stat-item"><h3>₹75 Lakhs*</h3><p>Lockable Shops Starts</p></div>
@@ -444,38 +470,37 @@
         <p style="margin-top: 20px; font-size:0.95rem;"> <strong></strong></p>
       </div>
 
-      <!-- LEAD FORM - TOP (web3forms + WhatsApp) - EMAIL FIELD REMOVED, plus WhatsApp button integrated after send enquiry -->
-      <div id="contact-form-top" class="quick-form-card">
-        <h3>Book Your Site Visit</h3>
-        <p>Get brochure, pricing & availability. <strong>Instant reply</strong></p>
-        <form id="web3form" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms Access Key - Replace with your own key from web3forms.com for production -->
-          <input type="hidden" name="access_key" value="31142292-ef01-48e5-8fae-0ade52207307">
-          <input type="hidden" name="subject" value="New RealEstate360 Lead from Landing Page">
-          <input type="hidden" name="redirect" value="false">
-          <div class="input-group">
-            <input type="text" name="name" placeholder="Full Name" required>
-          </div>
-          <div class="input-group">
-            <input type="tel" name="phone" placeholder="Mobile Number" required>
-          </div>
-          <!-- EMAIL FIELD COMPLETELY REMOVED -->
-          <div class="input-group">
-            <textarea name="message" rows="2" placeholder="Preferred date / Time"></textarea>
-          </div>
-          <button type="submit" class="btn" style="width:100%; background:#2E7D32;">Send Inquiry →</button>
-          
-          <!-- WhatsApp button integrated just after the Send Enquiry button -->
-          <div class="wa-row">
-            <a href="https://wa.me/91999999999?text=Hello%2C%20I%20am%20interested%20in%20RealEstate360%20at%20Dwarka%20Expressway.%20Please%20share%20details%20and%20brochure." 
-               target="_blank" 
-               class="whatsapp-btn" 
-               style="width:100%; justify-content: center; margin-top: 8px;">
-              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-          </div>
-        </form>
-        <div id="form-status" style="margin-top: 12px; font-size:0.85rem; text-align:center;"></div>
+      <!-- LEAD FORM CARD - TOP (web3forms, no email field, no internal WhatsApp button) -->
+      <div>
+        <div id="contact-form-top" class="quick-form-card">
+          <h3>Book Your Site Visit</h3>
+          <p>Get brochure, pricing & availability. <strong>Instant reply</strong></p>
+          <form id="web3form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="31142292-ef01-48e5-8fae-0ade52207307">
+            <input type="hidden" name="subject" value="New RealEstate360 Lead from Landing Page">
+            <input type="hidden" name="redirect" value="false">
+            <div class="input-group">
+              <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+              <input type="tel" name="phone" placeholder="Mobile Number" required>
+            </div>
+            <!-- EMAIL FIELD REMOVED -->
+            <div class="input-group">
+              <textarea name="message" rows="2" placeholder="Preferred date / Time"></textarea>
+            </div>
+            <button type="submit" class="btn" style="width:100%; background:#2E7D32;">Send Inquiry →</button>
+          </form>
+          <div id="form-status" style="margin-top: 12px; font-size:0.85rem; text-align:center;"></div>
+        </div>
+        <!-- WhatsApp button placed AFTER the form (outside the form, not inside) - Connect on WhatsApp -->
+        <div class="whatsapp-after-card">
+          <a href="https://wa.me/91999999999?text=Hello%21%20I%20am%20interested%20in%20RealEstate360%20at%20Dwarka%20Expressway.%20Please%20share%20details%20and%20brochure." 
+             class="whatsapp-connect-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Connect on WhatsApp (999999999)
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -613,7 +638,7 @@
   <!-- Tagline -->
   <section style="padding: 30px 0 20px;">
     <div class="container" style="text-align: center;">
-      <h2 style="font-size: 1.9rem; color:#1B5E20;">RealEstate<span style="font-size:0.85rem; vertical-align:super;">360</span> – The Medley of Good Times</h2>
+      <h2 style="font-size: 1.9rem; color:#1B5E20;">RealEstate360 – The Medley of Good Times</h2>
       <p style="font-size: 1.2rem; margin: 16px 0;">Shop. Work. Dine. Entertain. Experience It All.</p>
       <p>📍 Sector 99, Dwarka Expressway, Gurugram</p>
       <p style="margin-top: 12px;">Connect with us today for leasing and investment opportunities.</p>
@@ -624,10 +649,10 @@
 <footer>
   <div class="container">
     <div class="logo" style="margin-bottom: 18px;">
-      <h2 style="color:white;">RealEstate<span style="font-size:0.85rem; vertical-align:super;">360</span></h2>
-      <span style="color:#81C784;">Sector 99, Dwarka Expressway, Gurugram</span>
+      <h2 style="color:white; display: inline-flex; align-items: baseline;">RealEstate<sup style="font-size:0.8rem;">360</sup></h2>
+      <span style="color:#81C784; display: block;">Sector 99, Dwarka Expressway, Gurugram</span>
     </div>
-    <p>📞 Sales Enquiry: <strong>9310161058</strong> | 📧 hello@realestate360.in</p>
+    <p>📞 Sales Enquiry: <strong>9310161058</strong> | 📧 hello@RealEstate360webs.in</p>
     <p style="margin-top: 12px;">© 2025 RealEstate360 | Premium Commercial Destination | *T&C Apply</p>
   </div>
 </footer>
@@ -666,7 +691,7 @@
     }
   });
 
-  // Web3Forms handling + WhatsApp integrated already, but also handle form submission with feedback
+  // Web3Forms handling (form submission only)
   const form = document.getElementById('web3form');
   const statusDiv = document.getElementById('form-status');
   if(form) {
@@ -674,7 +699,6 @@
       e.preventDefault();
       statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       const formData = new FormData(form);
-      // Using fetch to submit to Web3Forms API
       try {
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
@@ -682,19 +706,19 @@
         });
         const result = await response.json();
         if(result.success) {
-          statusDiv.innerHTML = '✅ Thank you! Our expert will call you shortly. You can also WhatsApp us for instant details →';
+          statusDiv.innerHTML = '✅ Thank you! Our expert will call you shortly. For instant help, click WhatsApp button below.';
           form.reset();
-          setTimeout(() => { statusDiv.innerHTML = ''; }, 6000);
+          setTimeout(() => { statusDiv.innerHTML = ''; }, 5000);
         } else {
-          statusDiv.innerHTML = '⚠️ Error: ' + (result.message || 'Please try again or reach via WhatsApp.');
+          statusDiv.innerHTML = '⚠️ Error: ' + (result.message || 'Please try again or reach us on WhatsApp.');
         }
       } catch (error) {
-        statusDiv.innerHTML = '❌ Network error. Please WhatsApp us using the green button above.';
+        statusDiv.innerHTML = '❌ Network error. Please use WhatsApp button to connect.';
       }
     });
   }
 
-  // smooth anchor
+  // smooth anchor scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -707,6 +731,6 @@
     });
   });
 </script>
-<!-- Note: updated logo to RealEstate360 (with small '360'), integrated WhatsApp number 999999999 (displayed as +91 9999999999) after Send Enquiry button. All other content unchanged, background colors remain light green, phone in footer 9310161058 remains as per original. -->
+<!-- Logo updated to RealEstate360 with small 360. WhatsApp button is placed AFTER the form (not inside form). WhatsApp number: 999999999 (with country code 91). Everything else remains unchanged. -->
 </body>
 </html>
